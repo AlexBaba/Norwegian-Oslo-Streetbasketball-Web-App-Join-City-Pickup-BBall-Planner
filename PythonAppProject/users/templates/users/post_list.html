@@ -1,0 +1,22 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<title>Posts</title>
+<body>
+<h1>List of Posts</h1>
+
+{% for post in allposts %}
+<a href='postlist.html {{ post.text }}/'>{{ post.title }} </a>
+<br><br>
+
+
+<br><br>
+{% endfor %}
+
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpbh-mt'},{'server':'p3plmcpnl487010'},{'id':'8437534'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
+
+
+{% endblock content %}

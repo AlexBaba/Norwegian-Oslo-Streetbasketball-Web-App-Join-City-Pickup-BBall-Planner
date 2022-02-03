@@ -1,0 +1,150 @@
+.backdrop {
+	width: 620px; height: 300px;
+	position: relative;
+
+	background-size: 100%;
+
+
+}
+.text {
+	color: black;
+	background-color: white;
+	mix-blend-mode:screen; 
+	width: 100%; height: 100%;
+	font-weight: bolder;
+	
+
+	margin: 0;
+}
+.inverse {
+	color: white;
+	background-color: black;
+	text-transform: capitalize;
+}
+.backdrop
+,.text {
+	border-radius: 2px;
+	text-transform: capitalize;
+}
+.overlay {
+	width: 100%; height: 100%;
+	position: absolute;
+	top: 0;
+	mix-blend-mode:multiply;
+}
+
+/* water */
+
+.fire p {
+		text-transform: capitalize;
+
+	
+}
+
+
+/* fire */
+.backdropfire {
+	background-image: url(../../media/postdetailimages/textbackground1.jpg);
+text-transform: capitalize;
+	
+	}
+.fire.overlay{
+	background: transparent;
+text-transform: capitalize;
+	
+	}
+.fire.text{
+	font-size: 41px;
+	text-transform: capitalize;
+	position: relative;
+	
+	
+}
+
+
+
+
+
+
+.backdrop2 {
+	width: 620px; height: 300px;
+	position: relative;
+
+	background-size: 100%;
+
+
+}
+.text2 {
+	color: black;
+	background-color: white;
+	mix-blend-mode:screen; 
+	width: 100%; height: 100%;
+	font-weight: bolder;
+
+	margin: 0;
+}
+.inverse2 {
+	color: white;
+	background-color: transparent;
+	text-transform: capitalize;
+}
+.backdrop2
+,.text2 {
+	border-radius: 2px;
+	text-transform: capitalize;
+}
+.overlay2 {
+	width: 100%; height: 100%;
+	position: absolute;
+	top: 0;
+	mix-blend-mode:multiply;
+}
+
+/* water */
+
+.fire2 p {
+		text-transform: capitalize;
+
+	
+}
+
+
+/* fire */
+.backdropfire2 {
+	background-image: url(../../media/postdetailimages/textbackground3.jpg);
+text-transform: capitalize;
+
+	
+	}
+.fire2.overlay2{
+	
+text-transform: capitalize;
+	
+	}
+.fire2.text2{
+	font-size: 29px;
+	text-transform: capitalize;
+	position: relative;
+
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

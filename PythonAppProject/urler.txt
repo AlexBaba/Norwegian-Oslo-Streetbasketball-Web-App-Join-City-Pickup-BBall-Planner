@@ -1,0 +1,330 @@
+https://stackoverflow.com/questions/62901935/displaying-like-and-dislike-buttons-if-user-has-liked-a-post-with-django
+
+https://stackoverflow.com/questions/2398661/schedule-a-repeating-event-in-python-3
+
+
+https://stackoverflow.com/questions/38743403/best-way-to-create-a-day-model-in-django
+
+https://stackoverflow.com/questions/53304438/how-to-create-a-dynamic-model-for-days-of-week-names-in-schedule/53307880
+
+https://github.com/malisit/django-likeit
+
+https://stackoverflow.com/questions/51330931/auto-fill-django-models
+
+https://github.com/alexpnt/django-calendar
+
+pip install virtualenv
+
+
+virtualenv mypython
+
+
+    * pip install -r requirements.txt
+    * python manage.py makemigrations
+    * python manage.py migrate
+    * python manage.py createsuperuser
+    * python manage.py runserver
+
+https://github.com/shubham1710/ByteWalk
+
+https://towardsdatascience.com/build-a-social-media-website-with-django-feed-app-backend-part-4-d82facfa7b3
+
+https://stackoverflow.com/questions/45702548/django-button-for-attending-events
+
+https://www.google.no/search?q=django+scheduler+like+button+python&sxsrf=AOaemvJQmsY4SXRs9aFuCEQdAhIAqGfCzg%3A1638389669170&ei=pdenYfH3Ca2prgTRiJ4g&ved=0ahUKEwix3u-RtcP0AhWtlIsKHVGEBwQQ4dUDCA0&uact=5&oq=django+scheduler+like+button+python&gs_lcp=Cgdnd3Mtd2l6EAM6BwgAEEcQsANKBAhBGABQ0ghYuRVgzxdoAXACeACAAUuIAZEBkgEBMpgBAKABAcgBCMABAQ&sclient=gws-wiz
+
+https://django-scheduler.readthedocs.io/en/latest/
+
+month = datetime.now().month
+    year = datetime.now().year
+    print(calendar.month(year, month))
+
+
+
+
+
+
+import json
+import os
+from datetime import date
+from datetime import datetime
+
+x = datetime.today()
+y = x.replace(day=x.day + 1, hour=16, minute=0, second=0, microsecond=0)
+delta_t = y - x
+secs = delta_t.seconds + 1
+print("", y)
+start = datetime(2022, 4, 1, 16, 0)  # April 2022
+end = datetime(2023, 9, 29, 16, 0)  # September 2023
+
+# Menu
+print("Welcome to join pickup basketball trips to the streetbasketball court.")
+print("When you want to come to meet and play? Just create an invitation for other players to join later. ")
+print("1.See if there are some court meetings today?")
+print("2.Add a basketball meeting trip")
+
+# Events
+choice = input()
+# convert to integer
+choice = int(choice)
+
+# Load Data
+data_path = "eventdata.json"
+# Check if the file already exists (it won't exist the first time you use it)
+if os.path.exists(data_path):
+    with open(data_path, 'r') as f:
+        events = json.load(f)
+else:
+    # If it doesn't exist, create a fresh empty dictionary
+    events = {}
+
+# Event List
+if choice == 1:
+    # We'll define a default case, to be overwritten if an event is found today.
+    event = "Nothing scheduled"
+    if date.today().weekday() == 0:
+        # First, you need to check that such a variable exists in your schedule
+        if "monday" in events.keys():
+            # If so, that's what you want to grab
+            event = events["monday"]
+    if date.today().weekday() == 1:
+        if "tuesday" in events.keys():
+            event = events["tuesday"]
+    if date.today().weekday() == 2:
+        if "wednesday" in events.keys():
+            event = events["wednesday"]
+    if date.today().weekday() == 3:
+        if "thursday" in events.keys():
+            event = events["thursday"]
+    if date.today().weekday() == 4:
+        if "friday" in events.keys():
+            event = events["friday"]
+    if date.today().weekday() == 5:
+        if "saturday" in events.keys():
+            event = events["saturday"]
+    if date.today().weekday() == 6:
+        if "sunday" in events.keys():
+            event = events["sunday"]
+    print("Today you have to: ", event)
+
+# Add event
+if choice == 2:
+    print("How many times can a basketball meeting can be selected on days is maximum 1 meeting board per day for players to join.")
+    eventN = input()
+    eventN = int(eventN)
+    # We'll loop the answers.
+    for i in range(eventN):
+
+        print(f"Court training day {i + 1}: \n What event is it?")
+        event = "Basketball meet"
+        print("What day do you want to store the event?")
+        event_day = input()
+        event_day = str(event_day)
+        if event_day == "monday":
+            events["monday"] = event
+        if event_day == "tuesday":
+            events["tuesday"] = event
+        if event_day == "wednesday":
+            events["wednesday"] = event
+        if event_day == "thursday":
+            events["thursday"] = event
+            events["friday"] = event
+        if event_day == 5:
+            events["saturday"] = event
+        if event_day == 6:
+            events["sunday"] = event
+    # Store updated events to file
+    with open(data_path, 'w') as f:
+        json.dump(events, f)
+
+
+
+ image_file = models.ImageField(upload_to='profile_images/trippostsimages',
+                                   default='Backgroundimages/tripposterdescriptionimage.jpg', editable=False)
+
+print(timezone.now().date())
+print(timezone.now().day)
+
+
+https://github.com/legionscript/socialnetwork/tree/tutorial7/social
+https://www.youtube.com/watch?v=NRexdRbvd6o
+http://legionscript.com/articles/31/
+
+https://www.youtube.com/playlist?list=PLPSM8rIid1a3TkwEmHyDALNuHhqiUiU5A
+https://github.com/Josefinekihlstrom/LauraDay/blob/23e56beb88854181ca9dfeea49c824874aa37f87/blog/templates/add_post.html
+
+class post
+    likes = models.ManyToManyField(User, blank=True, related_name='likes')
+    dislikes = models.ManyToManyField(User, blank=True, related_name='dislikes')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+
+
+class Like(models.Model):
+    the_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="users")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="posts")
+    alreadyLiked = models.BooleanField(default=False)
+
+ path('create/', views.PostList.as_view(), name='post_create'),
+                  path('list/', views.PostList.as_view(), name='post_list'),
+                  path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+
+ <h1>{{ post.text }}</h1>
+
+
+<p>Court Meeting Day: {{ post.meet_day }}</p>
+
+{{ form.as_p }}
+
+<input type="submit" value="Post"/>
+</form>
+
+
+http://www.learningaboutelectronics.com/Articles/How-to-create-a-website-that-allows-for-user-generated-posts-with-Python-in-Django.php
+
+https://www.pexels.com/
+
+IntegrityError at /create/
+UNIQUE constraint failed: users_post.slug
+
+    slug = models.SlugField(max_length=200)
+
+    def save(self, *args, **kwargs):
+        if not self.url:
+            self.url = slugify(
+                self.text)  # here you don't need to add random numbers since the title is already unique
+        super().save(*args, **kwargs)
+
+
+    <form action="{% url 'post_detail' post.url  %}" method="post" name="post_detail" id="dislikeform">
+        {% csrf_token %}
+        <button type='submit' name='post_detail' value="{{ post.url }}" class="btn btn-primary">Not Coming this day - Can't Be There</button>
+    </form>
+
+{% else %}
+
+    <form action="{% url 'post_detail' post.url  %}" method="post" name="post_detail" id="likeform">
+        {% csrf_token %}
+        <button type='submit' name='{{post_detail}}' value="{{ post.url }}" class="btn btn-primary">I'm Coming & Playing this day</button>
+    </form>
+
+
+<script>
+$('#likeform').click(function(){
+      $.ajax({
+               type: "POST",
+               url: "{% url 'post_detail' post.url %}",
+               data: {'url': $(this).attr('meet_day'), 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+               dataType: "json",
+
+          });
+    })
+</script>
+
+
+
+def post_detail(request, url=None):
+    post = get_object_or_404(Post, url=url)
+
+    context = {'post': post,
+               }
+
+    if request.method == "POST":
+        # make sure user can't like the post more than once.
+        user = User.objects.get(username=request.user.username)
+        # find whatever post is associated with like
+        post = Post.objects.get(url=url)
+
+        newLike = Like(user=user, post=post)
+        newLike.alreadyLiked = True
+
+        post.likes += 1
+        # adds user to Post
+        post.user_likes.add(user)
+        post.save()
+        newLike.save()
+
+
+    return render(request, 'users/post_detail.html', context)
+
+
+
+<script type="text/javascript">
+
+$('#likebutton').click(function myfunction(){
+var id;
+id = $(this).attr("action");
+$.ajax(
+{
+    type:"POST",
+    url: "post_detail",
+    data:{
+csrfmiddlewaretoken: '{{ csrf_token }}'
+    },
+ }) });
+</script>
+
+
+def liked_post(request, url):
+    if request.is_ajax():
+        pk = request.POST.get('url')
+        user = User.objects.get(username=request.user.username)
+        post = get_object_or_404(Post, url=url)
+        if request.user in post.user_likes.all():
+            newLike = Like(user=user, post=post)
+            newLike.alreadyLiked = False
+            post.user_likes.remove(request.user)
+        else:
+            newLike = Like(user=user, post=post)
+            newLike.alreadyLiked = True
+            post.likes += 1
+            newLike.alreadyLiked.add(request.user)
+            # adds user to Post
+            post.user_likes.add(user)
+            post.save()
+            newLike.save()
+        return JsonResponse({'liked': newLike.alreadyLiked})
+    return redirect('post_detail')
+
+
+
+ <form action="{% url 'post_detail' post.url  %}" method="post" name="dislike" id="dislikeform">
+        {% csrf_token %}
+       <i class="fa fa-thumbs-down">
+        <button type='submit' id='dislike'  name='dislike' value="{{ post.url }}" class="btn btn-primary">You are already signed up to join. <br /> Change your presence -> (Sign out)</button>
+       </i>
+    </form>
+
+{% else %}
+
+
+
+
+<div class="site-wrap1" style="font-family: Verdana; color: white;  opacity: 1.1; position: relative; right: 100px;">
+
+
+			<img onload="window.onload" id="myDiv" style="height: 600px; width: 480px; object-fit: contain; opacity: 1.1;"/>
+
+              <div class="text1" style="font-family: Verdana; font-size: larger; height: auto;">
+                <div class="date1" style="position: relative; bottom: 500px;  width: 490px; background: rgba(0, 0, 0, 0.29); height: 470px;">
+				   <span class="date">{{ post.content }} .</span> <br />
+                    <span class="date">Court in Oslo: Grünerhagen Ballplass (Kuba Parken, Grünerløkka)</span>
+                    <br /><br />
+                    <span class="date">Post Created by  {{ post.created_by_user }}</span>
+                    <img class="account-img" src="{{ post.created_by_user.profile.avatar.url}}" style="filter: saturate(1.05); cursor: pointer; width: 120px; height: auto;   border-radius: 50%;" /> <br /><br />
+                <span class="date"> Post Created Time: <br /> {{ post.created_on }} : {{ post.created_on|timesince }} ago
+                </span> <br />
+                  <p style="font-size: 38px; text-decoration: none;"><a style="text-decoration: none;" href="{% url 'post_list' %}">Go Back to All Trips list </a></p>
+
+
+                </div>
+
+
+
+
+
+              </div>
+            </a>
+
+
+
+        </div>

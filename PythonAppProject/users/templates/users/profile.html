@@ -1,0 +1,101 @@
+{% extends "users/base.html" %}
+{% block title %}Profile Page{% endblock title %}
+{% block content %}
+
+    <style>
+
+       body
+    {
+      background-image: url(../../../media/Backgroundimages/bakgrunn1.jpg);
+      background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+  -o-background-size: cover;
+opacity: 1.5;
+  background-size: 100%;
+height: 100%;
+width: 100%;
+
+}
+
+@media screen and (min-width:140px) and (max-width:580px),
+   screen and (min-device-width:140px) and (max-device-width:580px)
+{
+body {
+      background-image: url(../../../media/Backgroundimages/bakgrunn1.jpg);
+   -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+opacity: 1.1;
+height: 100%;
+width: 100%;
+}
+
+    }
+
+    .button1 {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+    .button2 {
+  background-color:   #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+    </style>
+
+    <div class="row my-3 p-3">
+ <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer; width: 230px; height: auto;" />
+    </div>
+    {% if user_form.errors %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <div id="form_errors">
+                {% for key, value in user_form.errors.items %}
+                    <strong>{{ value }}</strong>
+                {% endfor %}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <div class="form-content" >
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="small mb-1" style="color: white; font-size: 18px; background: rgba(0, 0, 0, 0.5);">Username:</label>
+                            {{ user_form.username }}
+                        <label class="small mb-1" style="color: white; font-size: 18px; background: rgba(0, 0, 0, 0.5);">Email:</label>
+                            {{ user_form.email }}
+                    </div>
+                    <div class="form-group">
+                        <a class="button1" style="color: white; text-decoration: none;" href="{% url 'password_change' %}">Change Password</a>
+                        <hr>
+                        <label class="small mb-1" style="color: white; font-size: 18px; background: rgba(0, 0, 0, 0.5);" >Change Profile Picture:</label>
+                      {{ profile_form.avatar }}
+                    </div>
+                    <label class="small mb-1" style="color: white; font-size: 18px; background: rgba(0, 0, 0, 0.5);">Bio:</label> {{ profile_form.bio }}
+                </div>
+            </div>
+            <br><br>
+            <button class="btn btn-dark btn-lg" type="submit">Save Changes</button>
+            <button type="reset" class="btn btn-dark btn-lg">Reset</button>
+        </form>
+    </div>
+{% endblock content %}

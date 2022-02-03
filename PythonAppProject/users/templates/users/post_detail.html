@@ -1,0 +1,1178 @@
+{% extends "users/base.html" %}
+
+
+<html lang="">
+<head>
+      <meta name="viewport" content="width=device-width, height=device-height" charset="UTF-8">
+
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+       <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'>
+                                <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+
+<title>Trip Details</title>
+
+
+
+
+</head>
+
+{% block content %}
+
+    <a href="#basicModal" class="btn btn-lg btn-success" id="modalbutton" data-toggle="modal" data-target="#basicModal"><p>Check Users reported to Join</p></a>
+
+
+
+<style>
+
+ .container3 {
+ min-height: 900px;
+  overflow: auto;
+ min-width: auto;
+
+ }
+
+ .modal-content {
+background-image: url(../../../media/Backgroundimages/gradientbackgroundimg2.png);
+background-size: 100% 100%;
+
+ }
+
+
+ .box-section {
+  margin-top:10px;
+  margin-bottom:10px;
+  padding: 5px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: lightgray;
+  border-width:1px;
+  //box-shadow: 0 0 0 1px lightgray;
+
+}
+
+.nav-vertical {}
+
+.nav-vertical .nav-item {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.nav-vertical .nav-link {
+    //padding: .5rem 3rem;
+    color: darkgray !important;
+    font-weight: bold;
+}
+
+.nav-vertical .nav-link.active {
+    color: white !important;
+    //border-bottom: #5A6268 2px solid !important;
+background: linear-gradient(90deg, rgba(79,137,233,1) 1%, rgba(148,187,233,1) 100%);
+transition: all 0.4s;
+
+}
+
+.nav-link.active {
+width: 200px;
+height: auto;
+transition: 0.3s;
+font-size: 18px;
+
+
+}
+
+.nav-link.active:hover {
+transform: scale(1.06);
+
+
+}
+
+
+#modalbutton {
+
+position: relative;
+top: 1690px;
+left: 370px;
+
+background-image: linear-gradient(to right, #FFAFBD 0%, #ffc3a0  51%, #FFAFBD  100%);
+
+height: 70px;
+   transition: 0.4s;
+   box-shadow: 0 0 20px #eee;
+
+}
+
+#modalbutton:hover {
+
+transform: scale(1.13);
+text-decoration: none;
+
+
+}
+
+#modalbutton p {
+background: rgba(0, 0, 0, 0.19);
+  font-size: 34px;
+
+}
+
+
+
+
+
+ </style>
+
+
+ <style>
+
+
+
+.p-4 {
+    padding: 1.5rem!important;
+}
+.mb-0, .my-0 {
+    margin-bottom: 0!important;
+}
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+/* user-dashboard-info-box */
+.user-dashboard-info-box .candidates-list .thumb {
+    margin-right: 20px;
+}
+.user-dashboard-info-box .candidates-list .thumb img {
+    width: 80px;
+    height: 80px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.user-dashboard-info-box .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.user-dashboard-info-box .candidates-list td {
+    vertical-align: middle;
+}
+
+.user-dashboard-info-box td li {
+    margin: 0 4px;
+}
+
+.user-dashboard-info-box .table thead th {
+    border-bottom: none;
+}
+
+.table.manage-candidates-top th {
+    border: 0;
+}
+
+.user-dashboard-info-box .candidate-list-favourite-time .candidate-list-favourite {
+    margin-bottom: 10px;
+}
+
+.table.manage-candidates-top {
+    min-width: 550px;
+}
+
+.user-dashboard-info-box .candidate-list-details ul {
+    color: #969696;
+}
+
+/* Candidate List */
+.candidate-list {
+    background: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.candidate-list:hover {
+    -webkit-box-shadow: 0px 0px 34px 4px rgba(33, 37, 41, 0.06);
+    box-shadow: 0px 0px 34px 4px rgba(33, 37, 41, 0.06);
+    position: relative;
+    z-index: 99;
+}
+.candidate-list:hover a.candidate-list-favourite {
+    color: #e74c3c;
+    -webkit-box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
+    box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
+}
+
+.candidate-list .candidate-list-image {
+    margin-right: 25px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 80px;
+    flex: 0 0 80px;
+    border: none;
+}
+.candidate-list .candidate-list-image img {
+    width: 80px;
+    height: 80px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.candidate-list-title {
+    margin-bottom: 5px;
+}
+
+.candidate-list-details ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+}
+.candidate-list-details ul li {
+    margin: 5px 10px 5px 0px;
+    font-size: 13px;
+}
+
+.candidate-list .candidate-list-favourite-time {
+    margin-left: auto;
+    text-align: center;
+    font-size: 13px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 90px;
+    flex: 0 0 90px;
+}
+.candidate-list .candidate-list-favourite-time span {
+    display: block;
+    margin: 0 auto;
+}
+.candidate-list .candidate-list-favourite-time .candidate-list-favourite {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border: 1px solid #eeeeee;
+    border-radius: 100%;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #646f79;
+}
+.candidate-list .candidate-list-favourite-time .candidate-list-favourite:hover {
+    background: #ffffff;
+    color: #e74c3c;
+}
+
+.candidate-banner .candidate-list:hover {
+    position: inherit;
+    -webkit-box-shadow: inherit;
+    box-shadow: inherit;
+    z-index: inherit;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+.p-4 {
+    padding: 1.5rem!important;
+}
+.mb-0, .my-0 {
+    margin-bottom: 0!important;
+
+}
+
+.mb-0 a {
+    font-size: 17px;
+    font-family: Verdana;
+	text-decoration: none;
+
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.user-dashboard-info-box .candidates-list .thumb {
+    margin-right: 20px;
+}
+
+.img-fluid {
+border-radius: 50%;
+}
+
+
+</style>
+
+
+
+
+
+  <style>
+
+   body
+    {
+      background-image: url(../../../media/Backgroundimages/tripposterdescriptionimage6.jpg);
+      background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+  -o-background-size: cover;
+
+  background-size: 100%;
+height: 100%;
+width: 100%;
+
+}
+
+
+
+   @media screen and (min-width:140px) and (max-width:780px),
+   screen and (min-device-width:140px) and (max-device-width:780px) {
+    body {
+        background-image: url(../../../media/Backgroundimages/tripposterdescriptionimage6.jpg);
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
+
+        height: 100%;
+        width: 100%;
+    }
+
+    .site-wrap1 {
+        position: relative;
+        left: 200px;
+
+    }
+
+
+
+
+}
+
+
+
+
+    </style>
+
+<style>
+
+    .backdropfire {
+	width: 620px; height: 300px; position: relative; background-size: 100%; margin: 5px auto; background-image: url(../../../media/postdetailimages/textbackground1.jpg); text-transform: capitalize;
+
+}
+.text {
+
+
+	mix-blend-mode:screen;
+	width: 100%; height: 100%;
+	font-weight: bolder;
+
+
+	margin: 0;
+}
+.inverse {
+	color: white;
+
+	text-transform: capitalize;
+}
+.backdropfire,.text {
+	border-radius: 2px;
+	text-transform: capitalize;
+}
+.overlay {
+	width: 100%; height: 100%;
+	position: absolute;
+	top: 0;
+	mix-blend-mode:multiply;
+}
+
+/* water */
+
+.backdropfire p {
+		text-transform: capitalize;
+
+
+}
+
+
+/* fire */
+
+.backdropfire.overlay{
+	background: transparent;
+text-transform: capitalize;
+
+	}
+.backdropfire.text{
+	font-size: 41px;
+	text-transform: capitalize;
+	position: relative;
+
+
+}
+
+
+
+
+
+
+.backdropfire2 {
+	width: 620px; height: 300px; background-image: url(../../../media/postdetailimages/textbackground3.jpg); text-transform: capitalize; position: relative; background-size: 100%; margin: 1px auto;
+
+}
+.text2 {
+	color: white;
+
+	mix-blend-mode:screen;
+	width: 100%; height: 100%;
+	font-weight: bolder;
+
+	margin: 0;
+}
+.inverse2 {
+
+
+	text-transform: capitalize;
+}
+.backdrop2
+,.text2 {
+	border-radius: 2px;
+	text-transform: capitalize;
+}
+.overlay2 {
+	width: 100%; height: 100%;
+	position: absolute;
+	top: 0;
+	mix-blend-mode:multiply;
+}
+
+/* water */
+
+.backdropfire2 p {
+		text-transform: capitalize;
+
+
+}
+
+
+/* fire */
+.backdropfire2 {
+	background-image: url(../../../media/postdetailimages/textbackground3.jpg); text-transform: capitalize;
+
+	}
+.backdropfire2.overlay2{
+
+text-transform: capitalize;
+
+	}
+.fire2.text2{
+	font-size: 29px;
+	text-transform: capitalize;
+	position: relative;
+
+
+
+}
+
+
+
+
+
+</style>
+
+
+<body style="background-image: url(../../../media/Backgroundimages/tripposterdescriptionimage7.jpg); background-attachment: fixed; -webkit-background-size: 100% 100%; -moz-background-size: 100% 100%; -o-background-size: 100% 100%;  background-size: 100% 100%; background-repeat: no-repeat; height: 2600px; width: 100%;">
+
+<img style="filter: saturate(1.3); filter: brightness(1.23); background: rgba(0, 0, 0, 0.19);" src="../../../media/postlistimages/Grünerhagenballplassknapp.png" />
+
+<h2 style="color: lightcoral;">Watch calendar days </h2>
+<iframe src="https://calendar.google.com/calendar/embed?src=7jb3ki526orin9882c9ai73jq0%40group.calendar.google.com&ctz=Europe%2FOslo" style="border: 0" width="600" height="300" frameborder="0" scrolling="no"></iframe>
+
+<br />
+
+<div id="cboxdiv" style="position: relative; left: 220px; bottom: 300px; margin: 0 auto; width: 340px; font-size: 0; line-height: 0;">
+<div style="position: relative; height: 380px; overflow: auto; overflow-y: auto; -webkit-overflow-scrolling: touch; border: 0px solid;"><iframe src="https://www7.cbox.ws/box/?boxid=803773&boxtag=cynbkn&sec=main" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="auto" allowtransparency="yes" name="cboxmain7-803773" id="cboxmain7-803773"></iframe></div>
+<div style="position: relative; height: 150px; overflow: hidden; border: 0px solid; border-top: 0px;"><iframe src="https://www7.cbox.ws/box/?boxid=803773&boxtag=cynbkn&sec=form" allow="autoplay" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="no" allowtransparency="yes" name="cboxform7-803773" id="cboxform7-803773"></iframe></div>
+</div>
+
+
+
+
+<style>
+
+    .backdropfire:hover {
+        transform: scale(1.07);
+        transition: all .4s ease-in-out;
+
+    }
+
+     .backdropfire2:hover {
+        transform: scale(1.08);
+        transition: all .4s ease-in-out;
+
+    }
+
+
+</style>
+
+<div class="backdropfire" style="font-family: Verdana; color: white; width: 620px; height: 300px; position: relative; left: 100px; background-size: 100%; background-image: url(../../../media/postdetailimages/textbackground1.jpg); text-transform: capitalize;">
+	<br />
+    <p class="orangebutton" style="font-size: 23px; background-color: lightsalmon; width: 360px;">
+        {{ post.text }} Board </p>
+
+	<p class="greenbutton" style="position: relative; top: 10px; color: white; width: 190px; height: auto; background-color: lightgreen; font-size: 26px; text-transform: capitalize;"><img src="../../../media/postdetailimages/timeicon1.jpg" width="190px" height="140px" /> <br />
+        One Meet Day</p>
+	</p>
+</div>
+<br />
+
+<p class="backdropfire2" style="position: relative; color: white; bottom: 5px; font-family: Verdana;  left: 100px; width: 620px; height: 304px; background-image: url(../../../media/postdetailimages/textbackground3.jpg); text-transform: capitalize; background-size: 100%;">
+<div class="textcontent" style="background: rgba(0, 0, 0, 0.31); color: white; width: 430px; position: relative; left: 350px; bottom: 320px;">
+<p class="text2 fire2 inverse2" > Court Playing Day:
+    <br />  {{ post.meet_day|date:"l" }}  {{ post.meet_day }} <br />  </p>
+<br />
+     <p class="bluebutton" style="background-color: lightskyblue; width: 130px; color: white; font-size: 19px; text-transform: capitalize;">&nbsp; Time until:  </p> &nbsp; <p style="font-size:22px; position: relative; bottom: 70px; left: 150px;"> {{ post.meet_day|timeuntil }} left</p>
+ <p class="redbutton" style="color: white; width: 130px; background-color: lightcoral; font-size: 20px; text-transform: capitalize; ">&nbsp; Time since: </p>
+   &nbsp;   <p style="font-size:22px; color: white; position: relative; bottom: 70px; left: 150px;"> {{ post.meet_day|timesince }} ago
+</p>
+</div>
+
+
+</div>
+
+<style>
+ @media screen and (min-width:140px) and (max-width:680px),
+   screen and (min-device-width:140px) and (max-device-width:680px) {
+
+
+       #myDiv {
+         position: relative;
+         right: 500px;
+
+     }
+
+          .text1 {
+         position: relative;
+         right: 500px;
+
+
+     }
+
+    .site-wrap1 {
+        position: relative;
+        left: 100px;
+    }
+
+    .card {
+
+       position: relative;
+    left: 130px;
+
+    }
+
+.card img {
+
+position: relative;
+    left: 0px;
+
+}
+
+#cboxdiv {
+
+    position: relative;
+    left: 100px;
+    top: 60px;
+
+}
+
+.textcontent  {
+
+
+
+}
+
+
+ }
+
+  @media screen and (min-width:140px) and (max-width:380px),
+   screen and (min-device-width:140px) and (max-device-width:380px) {
+
+      .site-wrap1 {
+         position: relative;
+         left: 100px;
+
+
+           width: 492px;
+        height: 608px;
+
+     }
+
+
+
+
+
+
+  }
+
+
+
+    .site-wrap1 {
+transform: scale(1.15);
+        border: 3px lightgreen solid;
+        transition: all .6s ease-in-out;
+           width: 490px;
+        height: 608px;
+        position: relative;
+        bottom: 180px;
+        left: 700px;
+    }
+
+    .site-wrap1:hover {
+        transform: scale(1.36);
+
+    }
+
+</style>
+
+<br />
+
+<style>
+
+.likebuttondisplay {
+
+    position: relative;
+    top: 30px;
+    left: 0px;
+
+    height: auto;
+
+}
+
+#userlistdiv {
+
+    position: relative;
+    top: 30px;
+
+}
+
+.container3 {
+
+    overflow: auto;
+
+}
+
+.container3::-webkit-scrollbar {
+
+    width: 10px;
+	background-color: rgba(0,0,0,0.2);
+
+
+}
+
+
+.container3::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.07);
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 7px;
+
+
+}
+
+.container3::-webkit-scrollbar-thumb {
+border-radius: 7px;
+background: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+
+
+}
+
+
+#userslistsdiv::-webkit-scrollbar {
+    width: 10px;
+	background-color: rgba(0,0,0,0.2);
+
+}
+
+#userslistsdiv::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.07);
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 7px;
+}
+
+#userslistsdiv::-webkit-scrollbar-thumb {
+	border-radius: 7px;
+background: linear-gradient(135deg, orange 45%, cyan);
+
+}
+
+
+#userslistsdiv {
+overflow: auto;
+    background-color: #eee;
+    background-size: 100% 100%;
+
+}
+
+    .likebuttondisplay a {
+
+        font-size: 27px;
+    }
+
+</style>
+
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
+
+
+<style>
+
+.postdiv {
+background-image: url(../../../media/Backgroundimages/gradientbackgroundimg5.jfif);
+    font-family: Verdana;
+	height: auto;
+	width: 800px;
+    background-size: 100% 100%;
+position: relative;
+    left: 400px;
+bottom: 80px;
+}
+
+.card {
+    border: none;
+	background-color: #DEE4E7;
+    width: 480px;
+   position: relative;
+right: 50px;
+}
+
+.ellipsis {
+    color: lightgoldenrodyellow;
+}
+
+hr {
+    color: white;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.muted-color {
+    color: cornflowerblue;
+    font-size: 15px;
+}
+
+.ellipsis i {
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.icons i {
+    font-size: 25px;
+}
+
+.icons .fa-heart {
+    color: red;
+}
+
+.icons .fa-smile-o {
+    color: greenyellow;
+    font-size: 29px;
+}
+
+.rounded-image {
+    border-radius: 50% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 90px;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.comment-text {
+    font-size: 12px;
+}
+
+.status small {
+    margin-right: 10px;
+    color: blue;
+}
+
+.form-control {
+    border-radius: 26px;
+}
+
+.comment-input {
+    position: relative;
+}
+
+.fonts {
+    position: absolute;
+    right: 13px;
+    top: 8px;
+    color: #a09c9c;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #8bbafe;
+    outline: 0;
+    box-shadow: none;
+}
+
+.text-justify {
+    background-image: url(../../../media/Backgroundimages/gradientbackgroundimg3.png);
+
+
+}
+
+.date {
+   background: rgba(0, 0, 0, 0.12);
+    color: white;
+
+}
+
+</style>
+
+
+<div class="postdiv">
+  <div class="container mt-5 mb-5">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="d-flex justify-content-between p-2 px-3">
+                    <div class="d-flex flex-row align-items-center"> <img src="{{ post.created_by_user.profile.avatar.url}}" style="filter: saturate(1.05); cursor: pointer; width: 100px; height: auto;" width="50" class="rounded-circle">
+                        <div class="d-flex flex-column ml-2"> <span class="font-weight-bold" style="color: white; font-size: 20px; background-color: rgba(35, 203, 167, 0.38);">Post User created by {{ post.created_by_user }}</span> <small class="text-primary">Teammate, Sport Athlete</small> </div>
+                    </div>
+                    <div class="d-flex flex-row mt-1 ellipsis"> <small class="mr-2"></small> <i class="fa fa-ellipsis-h"></i> </div>
+                </div>
+                <img onload="window.onload" id="myDiv" style="height: 600px; width: 480px; object-fit: contain; opacity: 1.1;"/>
+
+                <div class="p-2">
+                    <p class="text-justify">
+                         <span class="date">{{ post.content }} .</span>
+                        <br /><br />
+                    <span class="date">Court in Oslo: Grünerhagen Ballplass (Kuba Parken, Grünerløkka)</span>
+                     <br /><br />
+                        <span class="date"> Post Created Time: <br /> {{ post.created_on }} : {{ post.created_on|timesince }} ago </span>
+                   <br />
+                        <br />
+                  <p style="font-size: 36px; text-decoration: none;"><a style="text-decoration: none;" href="{% url 'post_list' %}">Go Back to All Trips list </a></p>
+
+                    </p>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-row icons d-flex align-items-center"> <i class="fa fa-heart"></i> <i class="fa fa-smile-o ml-2"></i> </div>
+                        <div class="d-flex flex-row muted-color"> <span>0 comments</span> <span class="ml-2">Share</span> </div>
+                    </div>
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- basic modal -->
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+
+<!-- Edit info -->
+<div class="container3">
+
+  <!-- Vertical navs -->
+  <div class="row">
+    <div class="col-md-2 mb-3">
+      <ul class="nav-vertical nav nav-pills flex-column" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Presence of Users: <br /> Who's coming to play this day?  </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Pages -->
+    <div class="col-md-10">
+      <div class="tab-content" id="myTabContent">
+
+        <!-- Page : Edit profile -->
+        <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="home-tab">
+
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+ <script>
+
+window.onload = function () {
+    var images = [
+        '../../../media/postdetailimages/1.jpg',
+        '../../../media/postdetailimages/2.jpg',
+        '../../../media/postdetailimages/3.jpg',
+        '../../../media/postdetailimages/4.jpg',
+		 '../../../media/postdetailimages/5.jpg',
+        '../../../media/postdetailimages/6.jpg',
+        '../../../media/postdetailimages/7.jpg',
+        '../../../media/postdetailimages/8.jpg',
+		 '../../../media/postdetailimages/9.jpg',
+        '../../../media/postdetailimages/10.jpg',
+        '../../../media/postdetailimages/11.jpg',
+        '../../../media/postdetailimages/12.jpg',
+		 '../../../media/postdetailimages/13.jpg',
+        '../../../media/postdetailimages/14.jpg',
+        '../../../media/postdetailimages/15.jpg',
+        '../../../media/postdetailimages/16.jpg',
+		 '../../../media/postdetailimages/17.jpg',
+        '../../../media/postdetailimages/18.jpg',
+        '../../../media/postdetailimages/19.jpg',
+        '../../../media/postdetailimages/20.jpg',
+		 '../../../media/postdetailimages/21.jpg',
+        '../../../media/postdetailimages/22.jpg',
+		 '../../../media/postdetailimages/23.jpg',
+        '../../../media/postdetailimages/24.jpg',
+        '../../../media/postdetailimages/25.jpg',
+        '../../../media/postdetailimages/26.jpg',
+		 '../../../media/postdetailimages/27.jpg',
+        '../../../media/postdetailimages/28.jpg',
+        '../../../media/postdetailimages/29.jpg',
+        '../../../media/postdetailimages/30.jpg',
+		 '../../../media/postdetailimages/31.jpg',
+        '../../../media/postdetailimages/32.jpg',
+        '../../../media/postdetailimages/33.jpg',
+        '../../../media/postdetailimages/34.jpg',
+		 '../../../media/postdetailimages/35.jpg',
+        '../../../media/postdetailimages/36.jpg',
+        '../../../media/postdetailimages/37.jpg',
+        '../../../media/postdetailimages/38.jpg',
+		 '../../../media/postdetailimages/39.jpg',
+        '../../../media/postdetailimages/40.jpg',
+		'../../../media/postdetailimages/41.jpg'
+
+    ];
+
+    document.getElementById("myDiv").style.backgroundImage = 'url(' + images[Math.floor(Math.random()*images.length)] + ')';
+}
+
+</script>
+
+ <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
+
+
+
+
+<div class="container mt-3 mb-4">
+
+
+
+<div class="likebuttondisplay">
+
+
+
+<p style="color: white; font-family: 'Trebuchet MS'; font-size: 22px;">Total number of players who say they will join: {{ post.user_likes.count }} </p>
+<br />
+<br />
+
+{% if user in post.user_likes.all %}
+     <div class="like-count{{post.url}}">
+     </div>
+{% endif %}
+<form action="{% url 'post_detail' post.url  %}" method="post" name="like" id="likeform">
+        {% csrf_token %}
+
+        <input name="post_id" value="{{ post.post_id }}" type="hidden">
+
+        <button type='submit' id='likebutton' name='like' value="{{ post.url }}" class="btn btn-primary" style="font-size: 20px; font-family: Verdana;">
+    {% if user not in post.user_likes.all %}
+                   Im Coming & Playing this day (Sign Up)
+                                {% else %}
+                   You are already Signed up to join. Change your presence -> (Sign out)
+                               </button>
+                                {% endif %}
+    </form>
+
+
+
+
+
+
+    </div>
+
+<br />
+
+
+<div class="col-lg-9 mt-4 mt-lg-0" id="userlistdiv">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm" id="userslistsdiv">
+          <table class="table manage-candidates-top mb-0">
+            <thead>
+              <tr>
+                <th style="color: cadetblue">Users signed up</th>
+                <th class="text-center"></th>
+                <th class="action text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for user in post.user_likes.all %}
+              <tr class="candidates-list">
+                <td class="title">
+                  <div class="thumb">
+                    <img class="img-fluid" src="{{ user.profile.avatar.url}}" style="filter: saturate(1.05); cursor: pointer; width: 120px; height: auto; border-radius: 50%;" alt="">
+                  </div>
+                  <div class="candidate-list-details">
+                    <div class="candidate-list-info">
+                      <div class="candidate-list-title">
+
+                        <h5 class="mb-0"><a href="#">  {{ user }}  </a></h5>
+                      </div>
+
+
+                      <div class="candidate-list-option">
+                        <ul class="list-unstyled">
+
+                          <li><i class="fas fa-map-marker-alt pr-1"></i> Oslo, Norway</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="candidate-list-favourite-time text-center">
+                  <a class="candidate-list-favourite order-2 text-danger" href="#"><i class="fas fa-heart"></i></a>
+                  <span class="candidate-list-time order-1" style="font-family: Verdana;">  Athlete, Streetbasket, Basketball Player, User</span>
+                </td>
+                <td>
+                  <ul class="list-unstyled mb-0 d-flex justify-content-end">
+                    <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
+
+                  </ul>
+                </td>
+              </tr>
+    {% endfor %}
+            </tbody>
+          </table>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<br />
+<br />
+
+{% block scripts %}
+
+<script>
+
+$('#likeform').submit(function(e){
+                e.preventDefault()
+
+const post_id = $(this).attr('value')
+
+                const likeText = $(`#likebutton${post_id}`).text()
+                const trim = $.trim(likeText)
+
+                const url = $(this).attr('action')
+
+                let res;
+                const likes = $(`.like-count${post_id}`).text()
+                const trimCount = parseInt(likes)
+
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: {
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                        'post_id':post_id,
+                    },
+                    success: function(response) {
+                        if(trim === 'You are already Signed up to join. Change your presence -> (Sign out)') {
+                            $(`#likebutton${post_id}`).text('Im Coming & Playing this day (Sign Up)')
+                            res = trimCount - 1
+                        } else {
+                            $(`#likebutton${post_id}`).text('You are already Signed up to join. Change your presence -> (Sign out)')
+                            res = trimCount + 1
+                        }
+
+                        $(`.like-count${post_id}`).text(res)
+                    },
+                    error: function(response) {
+                        console.log('error', response)
+                    }
+                })
+
+            })
+        })
+</script>
+{% endblock scripts %}
+
+
+
+
+
+
+</body>
+
+{% endblock content %}
+</html>
+
+

@@ -1,0 +1,1999 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_filters %}
+{% block title %} Home Page {% endblock title%}
+{% block content %}
+
+    <head>
+     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes" charset="UTF-8">
+
+       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css'>
+
+
+<style>
+
+   body
+    {
+      background-image: url(../../../media/Backgroundimages/bakgrunn1.jpg);
+      background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+  -o-background-size: cover;
+opacity: 1.5;
+  background-size: 100%;
+height: 100%;
+width: 100%;
+
+}
+
+   .appdiv {
+       position: relative;
+       left: 63px;
+top: 100px;
+       height: 6000px;
+
+   }
+
+   .app {
+   height: 3000px;
+
+   }
+
+      .jumbotron {
+
+
+        position: relative;
+
+
+    }
+
+
+@media screen and (min-width:140px) and (max-width:580px),
+   screen and (min-device-width:140px) and (max-device-width:580px)
+{
+body {
+      background-image: url(../../../media/Backgroundimages/bakgrunn1.jpg);
+   -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+opacity: 1.1;
+height: 100%;
+width: 100%;
+}
+
+.app {
+ height: 5000px;
+
+
+
+}
+.appdiv {
+
+     position: relative;
+left: 440px;
+
+
+}
+
+.header{
+
+    position: relative;
+    left: 40px;
+}
+
+.aboutpage {
+
+    position: relative;
+    left: 310px;
+}
+
+.overlay-backgroundshadow {
+      position: relative;
+    left: 100px;
+
+}
+
+.footerclass {
+     position: relative;
+    left: 350px;
+
+
+}
+
+#locationsmapmobile {
+
+    position: relative;
+    bottom: 170px;
+
+}
+
+
+
+
+#gridtableappcard {
+    visibility: hidden;
+
+}
+
+ .side-wrapper {
+ position:  relative;
+
+max-width: 100px;
+
+ }
+
+  .left-side {
+
+    width: 100px;
+ position:  relative;
+      left: 140px;
+  }
+
+.wrapper {
+  height: 5500px;
+ width: auto;
+ width: auto;
+}
+
+    .jumbotron {
+
+           min-width: 500px;
+        position: relative;
+
+
+    }
+
+
+    }
+
+*:hover{
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+section{
+    float:left;
+
+
+    padding:30px 0;
+}
+h1{float:left; width:100%; color:#232323; margin-bottom:30px; font-size: 14px;}
+h1 span{font-family: 'Libre Baskerville', serif; display:block; font-size:45px; text-transform:capitalize; margin-bottom:20px; margin-top:30px; font-weight:700}
+h1 a{color:#131313; font-weight:bold;}
+
+.profile {
+
+position: relative;
+top: 3px;
+      -webkit-filter: blur(0px);
+  filter: blur(0px);
+  max-height: 400px;
+}
+
+/*Profile Card 1*/
+.profile-card-1 {
+  font-family: 'Open Sans', Arial, sans-serif;
+  position: relative;
+  float: left;
+  overflow: hidden;
+
+  color: #ffffff;
+  text-align: center;
+
+  border:none;
+}
+.profile-card-1 .background {
+
+  vertical-align: top;
+  opacity: 1.1;
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+   -webkit-transform: scale(0.99);
+  transform: scale(0.99);
+}
+.profile-card-1 .card-content {
+  width: 50%;
+  padding: 15px 25px;
+  position: absolute;
+  left: 23%;
+  top: 60%;
+}
+.profile-card-1 .profile {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  max-width: 240px;
+  opacity: 1;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 1);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.profile-card-1 h2 {
+    position: relative;
+top: 10px;
+  margin: 0 0 5px;
+  font-weight: 600;
+  font-size:28px;
+}
+.profile-card-1 h2 small {
+  display: block;
+  font-size: 22px;
+  margin-top:10px;
+}
+.profile-card-1 i {
+  display: inline-block;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    margin:0 5px;
+}
+.profile-card-1 .icon-block{
+    float:left;
+    width:100%;
+    margin-top:15px;
+}
+.profile-card-1 .icon-block a{
+    text-decoration:none;
+}
+.profile-card-1 i:hover {
+  background-color:#fff;
+  color:#2E3434;
+  text-decoration:none;
+}
+
+
+.jumbotron {
+
+     background-image:url(../../../media/Backgroundimages/homepagemenubackground.jpg);
+
+  background-size: 100% 100%;
+height: 100%;
+width: 100%;
+
+}
+
+</style>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="../../../media/main-template-files/style.css">
+  <link rel="stylesheet" href="../../../media/tablecontent-files/style2.css">
+</head>
+<body>
+    <div class="jumbotron">
+    <h1 class="display-4" style="color: white; position: relative; left: 40px; font-size: 35px; " > &nbsp &nbsp  &nbsp Welcome  {{user.first_name.title|default:'Guest'}} <br />  &nbsp &nbsp &nbsp {{user.username.title }} &nbsp &nbsp &nbsp &nbsp  <br /> <br />  &nbsp &nbsp  &nbsp <img class="rounded-circle account-img" src="{{user.profile.avatar.url}}" alt="" style="cursor: pointer; width: 200px; height: auto;" />
+
+        </h1>
+
+
+
+
+        <p class="lead">
+
+        </p>
+
+        <hr class="my-4">
+        <p class="lead">
+            {% if user.is_authenticated %}
+                <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">Logout</a>
+            {% else %}
+                <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Sign in</a>
+            {% endif %}
+        </p>
+</div>
+
+<section>
+    <div class="container">
+    	<div class="row">
+
+    		<div class="col-md-4">
+    		    <div class="card profile-card-1">
+    		        <img src="../../../media/Backgroundimages/alexbabaprofileimg.jpg" alt="profile-sample1" class="background"/>
+    		        <img src="../../../media/Backgroundimages/alexbabaprofileimg2.jpg" alt="profile-image" class="profile"/>
+                    <div class="card-content">
+                   <br /> <h2 style="background-color: rgba(0, 0, 0, 0.46);">Alex Baba<small>Engineer</small></h2>
+                      <a href="#about" style="font-size: 19px; color: white; text-decoration: none;"><p class="mt-3 w-100 float-left text-center" style="background-color: rgba(0, 0, 0, 0.4);"><strong style="font-weight: normal;">About page (Web App)</strong></p></a>
+
+                    </div>
+
+                </div>
+    		</div>
+        </div>
+    </div>
+</section>
+
+
+    <div class="maindiv">
+<!-- partial:index.partial.html -->
+<div class="video-bg" style="z-index: -1;">
+
+<video autoplay loop muted style="background-color: rgba(0, 0, 0, 0.06);">
+  <source src="../../../media/main-template-files/basketballpagevideobackground1.mp4" type="video/mp4">
+</video>
+
+</div>
+
+        <br />
+<div class="appdiv">
+<div class="app" style="height: 3300px;">
+
+
+ <div class="header">
+  <div class="menu-circle"></div>
+  <div class="header-menu">
+   <a class="menu-link is-active" href="/" style="text-decoration:none; color: white;">Home</a>
+   <a class="menu-link notify" href="{% url 'post_list' %}" target="_blank" style="text-decoration:none; color: white;">Discover All Trip Days posted</a>
+
+   <a class="menu-link notify" href="{% url 'login' %}" style="text-decoration:none; color: white;">Sign In</a>
+  </div>
+  <div class="search-bar">
+   <input type="text" placeholder="Search">
+  </div>
+
+ </div>
+ <div class="wrapper" >
+  <div class="left-side">
+   <div class="side-wrapper">
+    <div class="side-title">Main</div>
+    <div class="side-menu">
+     <a href="{% url 'post_list' %}" style="text-decoration:none; color: white;">
+      <svg viewBox="0 0 512 512">
+       <g xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <path d="M0 0h128v128H0zm0 0M192 0h128v128H192zm0 0M384 0h128v128H384zm0 0M0 192h128v128H0zm0 0" data-original="#bfc9d1" />
+       </g>
+       <path xmlns="http://www.w3.org/2000/svg" d="M192 192h128v128H192zm0 0" fill="currentColor" data-original="#82b1ff" />
+       <path xmlns="http://www.w3.org/2000/svg" d="M384 192h128v128H384zm0 0M0 384h128v128H0zm0 0M192 384h128v128H192zm0 0M384 384h128v128H384zm0 0" fill="currentColor" data-original="#bfc9d1" />
+      </svg>
+     Browse All Trips Posts
+     </a>
+
+    </div>
+   </div>
+   <div class="side-wrapper">
+    <div class="side-title">Show Current Posts</div>
+    <div class="side-menu">
+	  <a href="{% url 'post_list' %}" style="text-decoration:none; color: white;">
+      <svg viewBox="0 0 488.932 488.932" fill="currentColor">
+       <path d="M243.158 61.361v-57.6c0-3.2 4-4.9 6.7-2.9l118.4 87c2 1.5 2 4.4 0 5.9l-118.4 87c-2.7 2-6.7.2-6.7-2.9v-57.5c-87.8 1.4-158.1 76-152.1 165.4 5.1 76.8 67.7 139.1 144.5 144 81.4 5.2 150.6-53 163-129.9 2.3-14.3 14.7-24.7 29.2-24.7 17.9 0 31.8 15.9 29 33.5-17.4 109.7-118.5 192-235.7 178.9-98-11-176.7-89.4-187.8-187.4-14.7-128.2 84.9-237.4 209.9-238.8z" />
+      </svg>
+     Upcoming Recent Court Trips
+      <span class="notification-number updates"></span>
+
+	   </a>
+	    <a href="{% url 'post_create' %}" style="text-decoration:none; color: white;">
+      <svg viewBox="0 0 512 512" fill="currentColor">
+       <path d="M497 151H316c-8.401 0-15 6.599-15 15v300c0 8.401 6.599 15 15 15h181c8.401 0 15-6.599 15-15V166c0-8.401-6.599-15-15-15zm-76 270h-30c-8.401 0-15-6.599-15-15s6.599-15 15-15h30c8.401 0 15 6.599 15 15s-6.599 15-15 15zm0-180h-30c-8.401 0-15-6.599-15-15s6.599-15 15-15h30c8.401 0 15 6.599 15 15s-6.599 15-15 15z" />
+       <path d="M15 331h196v60h-75c-8.291 0-15 6.709-15 15s6.709 15 15 15h135v-30h-30v-60h30V166c0-24.814 20.186-45 45-45h135V46c0-8.284-6.716-15-15-15H15C6.716 31 0 37.716 0 46v270c0 8.284 6.716 15 15 15z" />
+      </svg>
+      Create A New Trip Board
+     </a>
+
+    </div>
+   </div>
+
+      <div class="side-wrapper">
+    <div class="side-title">Meeting place location. City outdoor courts.</div>
+    <div class="side-menu">
+     <a href="#locationsmap" style="text-decoration:none; color: white;">
+      <img src="../../../media/main-template-files/locationicon.png" width="20px" height="25px" style="border-radius: 50%;"/>
+       &nbsp;  Ball Parks Locations: <br />
+         &nbsp;   Main section
+     </a>
+    </div>
+   </div>
+
+
+   <div class="side-wrapper">
+    <div class="side-title">Web sites (links)</div>
+    <div class="side-menu">
+     <a href="#websites" style="text-decoration:none; color: white;">
+      <svg viewBox="0 0 332 332" fill="currentColor">
+       <path d="M282.341 8.283C275.765 2.705 266.211 0 253.103 0c-18.951 0-36.359 5.634-51.756 16.743-14.972 10.794-29.274 28.637-42.482 53.028-4.358 7.993-7.428 11.041-8.973 12.179h-26.255c-10.84 0-19.626 8.786-19.626 19.626 0 8.989 6.077 16.486 14.323 18.809l-.05.165h.589c1.531.385 3.109.651 4.757.651h18.833l-32.688 128.001c-7.208 27.848-10.323 37.782-11.666 41.24-1.445 3.711-3.266 7.062-5.542 10.135-.42-5.39-2.637-10.143-6.508-13.854-4.264-4.079-10.109-6.136-17.364-6.136-8.227 0-15.08 2.433-20.37 7.229-5.416 4.93-8.283 11.193-8.283 18.134 0 5.157 1.701 12.712 9.828 19.348 6.139 4.97 14.845 7.382 26.621 7.382 17.096 0 32.541-4.568 45.891-13.577 13.112-8.845 24.612-22.489 34.166-40.522 9.391-17.678 18.696-45.124 28.427-83.9l18.598-73.479h30.016c10.841 0 19.625-8.785 19.625-19.625s-8.784-19.626-19.625-19.626h-19.628c6.34-21.62 14.175-37.948 23.443-48.578 2.284-2.695 5.246-5.692 8.412-7.678-1.543 3.392-2.325 6.767-2.325 10.055 0 6.164 2.409 11.714 6.909 16.03 4.484 4.336 10.167 6.54 16.888 6.54 7.085 0 13.373-2.667 18.17-7.716 4.76-5.005 7.185-11.633 7.185-19.703.017-9.079-3.554-16.899-10.302-22.618z" />
+      </svg>
+      Social media pages: <br />
+         &nbsp;   Main section
+     </a>
+    </div>
+   </div>
+
+  </div>
+  <div class="main-container">
+   <div class="main-header">
+    <a class="menu-link-main" style="text-decoration:none; color: white;">Main</a>
+    <div class="header-menu">
+     <a class="main-header-link is-active" href="#about" style="text-decoration:none; color: white;">About - How it works</a>
+     <a class="main-header-link" href="{% url 'users-profile' %}" style="text-decoration:none; color: white;">My account</a>
+	    <a class="main-header-link" href="{% url 'users-profile' %}" style="text-decoration:none; color: white;">Your Profile Picture</a>
+     <a class="main-header-link" href="#" style="text-decoration:none; color: white;">App users</a>
+
+    </div>
+   </div>
+      <div style="position: relative; left: 0px;">
+   <div class="content-wrapper">
+
+    <div class="content-section">
+
+	<div id="#websites"> </div>
+     <div class="content-section-title">Websites & Resources (links)</div>
+     <ul>
+
+
+	 <a href='http://alexbaba.github.io/City%20Streetball%20webapp%20Norwegian%20Oslo%20Streetbasketball/indexmenupagemobile.html' target="_blank" style="text-decoration:none; color: white;">
+
+      <li class="adobe-product">
+	  <div class="products">
+
+	   	  <img src="../../../media/main-template-files/websitearticlewikiicon.jpg" width="34px" height="38px" style="border-radius: 50%;"/>
+
+
+       &nbsp; The norwegian Oslo Streetbasketball site
+       </div>
+       <span class="status" style="position:relative; bottom: 30px; left: 470px;">
+        <span class="status-circle green"></span>
+        Baller info & Basketball Interest website</span>
+        <div class="button-wrapper">
+        <a class="content-button status-button open" style="position: relative; left: 2px;">Open</a>
+
+       </div>
+      </li>
+     </a>
+
+
+
+
+    <a href="https://www.facebook.com/groups/norwegianstreetbasketballsocietystreetballoslo" target="_blank" style="text-decoration:none; color: white;">
+      <li class="adobe-product">
+       <div class="products">
+           <img src="../../../media/main-template-files/websitefacebookicon.png" width="34px" height="38px" style="border-radius: 50%;"/>
+
+       &nbsp; Norwegian Street Basketball Society-Streetball-Oslo, Norway
+       </div>
+       <span class="status" style="position:relative; top: 5px; ">
+        <span class="status-circle green"></span>
+        Social Media Facebook Page</span>
+       <div class="button-wrapper">
+        <button class="content-button status-button open" style="position: relative; left: 2px;">Open</button>
+
+       </div>
+      </li>
+
+	  </a>
+
+	      <a href="https://en.wikipedia.org/wiki/Streetball" target="_blank" style="text-decoration:none; color: white;">
+
+	     <li class="adobe-product">
+       <div class="products">
+
+    <img src="../../../media/main-template-files/websitebasketballicon.jpg" width="34px" height="38px" style="border-radius: 50%;"/>
+
+
+       &nbsp; Learn about Streetball (article)
+       </div>
+       <span class="status" style="position:relative; top: 5px; left: 15px;">
+        <span class="status-circle green"></span>
+        Article page (Wikipedia)</span>
+       <div class="button-wrapper">
+        <button class="content-button status-button open" style="position: relative; left: 2px;">Open</button>
+
+       </div>
+      </li>
+
+
+	  </a>
+
+     </ul>
+    </div>
+    <div class="content-sectaion">
+     <div class="content-section-title">About</div>
+     <div class="apps-card">
+      <div class="app-card">
+       <span>
+       <img src="../../../media/main-template-files/introicon4.jpg" width="60px" height="70px" style="border-radius: 50%;" alt="hi"/>
+     &nbsp;  Intro
+       </span>
+       <div class="app-card__subtext">Welcome! This is a simple app and small tool developed to plan and organize outdoor basketball trips to the city courts (in Oslo, Norway). A feature is to give sport athletes, players and friend groups insight into who's coming to play ball and when on which days.  <br />
+                       </div>
+       <div class="app-card-buttons">
+      <a href="#about"> <button class="content-button status-button" style="background: #0066cc; text-decoration: none; position: relative; left: 1px;">Read more about</button></a>
+        <div class="menu"></div>
+       </div>
+      </div>
+      <div class="app-card">
+       <span>
+        <img src="../../../media/main-template-files/introicon.png" width="60px" height="70px" style="border-radius: 50%;"/>
+       &nbsp;  Background
+       </span>
+       <div class="app-card__subtext">This is a tool that can be used to see which users (who) want to come to the park and plan to take a trip to a selected court on a chosen day that fits your schedule. How many people have reported to come and play on the given day? Users can get updates on the current number of players who plan to play a given day. Users can get shown how many athletes who will join the Sport park and different selections of ball courts in the city of Oslo, in Norway. <br />
+      </div>
+       <div class="app-card-buttons">
+      <a href="#about"> <button class="content-button status-button" style="text-decoration: none; background: #0066cc; position: relative; left: 2px;">Read more </button></a>
+           <div class="menu"></div>
+       </div>
+      </div>
+      <div class="app-card">
+       <span>
+       <img src="../../../media/main-template-files/introicon2.jpg" width="60px" height="70px" style="border-radius: 50%;" alt="icon"/>
+       &nbsp; Feature
+       </span>
+       <div class="app-card__subtext">Attending players will include an overview of which people (users) who have reported arrival in advance, with just one button click! This simple feature works like an open invitation app. It is also possible to cancel your attendance on a trip at any time, so anyone can see your presence updated.  	<br /> 	<br />If a meeting day is not found in feeds list, just create one! A requirement is to add a new day when you plan to come, so more players can join a trip.</p>  </div>
+       <div class="app-card-buttons">
+      <a href="#about"> <button class="content-button status-button" style="text-decoration: none; background: #0066cc; position: relative; left: 2px;">Read more </button></a>
+        <div class="menu"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+
+	<br />
+	<br />
+
+
+
+
+	<div class="app-card" id="gridtableappcard" style="width: 950px; height: 1180px;">
+	<div class="app-card__subtext" style="width: 930px;">
+
+
+<div class="grid-table" style="position: relative; bottom: 200px; right: 170px;">
+
+
+ <div class="muck-up">
+
+ <div class="overlay">
+
+  </div>
+  <div class="top">
+    <div class="nav">
+
+      <p></p>
+      <span class="ion-ios-more-outline"></span>
+    </div>
+    <div class="user-profile">
+
+      <div class="user-details" style="position: relative; left: 95px; bottom: 307px;">
+        <h4>Activity Categories</h4>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="position: relative; bottom: 300px; width: 100%;">
+
+  <div class="grid-table-row">
+    <div class="grid-table-cell">Sports Type</div>
+    <div class="grid-table-cell">City Location Place</div>
+    <div class="grid-table-cell" style="width: 200px;">Full-Packed Court Weekday Time (estimated)</div>
+
+  </div>
+  <div class="grid-table-row">
+    <div class="grid-table-cell" data-title="Sportstype"><img src="../../../media/sports-categories-files/bball.png" style="border-radius: 50%;"/>&nbsp; Outdoor pickup basketball</div>
+    <div class="grid-table-cell" data-title="Loc"><img src="../../../media/sports-categories-files/locationicon.png" width="17px" height="22px" style="border-radius: 50%;"/>&nbsp Oslo, Norge</div>
+    <div class="grid-table-cell" style="width: 200px;" data-title="Time"><img src="../../../media/sports-categories-files/timeicon.png" width="20px" height="20px" style="border-radius: 50%;"/>16:00 - 22:00</div>
+  </div>
+  <div class="grid-table-row">
+    <div class="grid-table-cell" data-title="Sportstype"><img src="../../../media/sports-categories-files/bball.png" style="border-radius: 50%;"/>&nbsp; Street basketball</div>
+    <div class="grid-table-cell" data-title="Loc"><img src="../../../media/sports-categories-files/locationicon.png" width="17px" height="22px" style="border-radius: 50%;"/>&nbsp Oslo, Norge</div>
+    <div class="grid-table-cell" style="width: 200px;" data-title="Time"><img src="../../../media/sports-categories-files/timeicon.png" width="20px" height="20px" style="border-radius: 50%;"/>16:00 - 22:00</div>
+  </div>
+  <div class="grid-table-row">
+    <div class="grid-table-cell" data-title="Sportstype"><img src="../../../media/sports-categories-files/bball.png" style="border-radius: 50%;"/>&nbsp; Easy basketball</div>
+    <div class="grid-table-cell" data-title="Loc"><img src="../../../media/sports-categories-files/locationicon.png" width="17px" height="22px" style="border-radius: 50%;"/>&nbsp Oslo, Norge</div>
+    <div class="grid-table-cell" style="width: 200px;" data-title="Time"><img src="../../../media/sports-categories-files/timeicon.png" width="20px" height="20px" style="border-radius: 50%;"/>16:00 - 22:00</div>
+  </div>
+
+
+
+
+<br />
+<p style="background: rgba(0, 0, 0, 0.1); width: 440px; font-size: 24px; font-family: Calibri;">  Sport Parks <img src="../../../media/sports-categories-files/arrowicon.png" width="35px" height="29px" style="border-radius: 50%;" /> Open-Court Times </p>
+<br />
+  <div class="grid-table-row">
+    <div class="grid-table-cell" style="font-weight: bold;">Ball Court Selection <br />  </div>
+    <div class="grid-table-cell" style="font-weight: bold;">City Location</div>
+    <div class="grid-table-cell" style="font-weight: bold;" style="width: 200px;">Weekday Time (estimated)</div>
+
+  </div>
+ <a href="{% url 'post_list' %}" target="_blank" class="btn block" style="text-decoration: none;  font-weight: normal; font-size: 20px; color: white;">
+ <div class="grid-table-row" style="text-transform: capitalize; background-color: #ff7043;">
+    <div class="grid-table-cell" style="background-color: #ff7043;" data-title="Sportstype"><img src="../../../media/sports-categories-files/bball.png" style="border-radius: 50%;"/>&nbsp; Grunerhagen Ballplass (Kuba Parken)</div>
+    <div class="grid-table-cell" style="background-color: #ff7043;" data-title="Loc"><img src="../../../media/sports-categories-files/locationicon.png" width="17px" height="22px" style="border-radius: 50%;"/>&nbsp Grunerløkka, Oslo</div>
+    <div class="grid-table-cell" style="background-color: #ff7043;" data-title="Time"><img src="../../../media/sports-categories-files/timeicon.png" width="20px" height="20px" style="border-radius: 50%;"/>16:00 - 22:00</div>
+  </div>
+  </a>
+  <a class="btn block" style="text-decoration: none; text-transform: capitalize;  font-size: 24px; font-weight: normal; color: white; ">
+  <div class="grid-table-row" style="background-color: #2BBBAD;">
+    <div class="grid-table-cell" style="background-color: #2BBBAD;" data-title="Sportstype"><img src="../../../media/sports-categories-files/bball.png" style="border-radius: 50%;"/>&nbsp; Lille Bislett Idrettsplass</div>
+    <div class="grid-table-cell" style="background-color: #2BBBAD;" data-title="Loc"><img src="../../../media/sports-categories-files/locationicon.png" width="17px" height="22px" style="border-radius: 50%;"/>&nbsp Bislett, Oslo</div>
+    <div class="grid-table-cell" style="background-color: #2BBBAD;" data-title="Time"><img src="../../../media/sports-categories-files/timeicon.png" width="20px" height="20px" style="border-radius: 50%;"/>16:00 - 22:00</div>
+  </div>
+  </a>
+  <a class="btn block" style="text-decoration: none; text-transform: capitalize; font-size: 24px; font-weight: normal; color: white;">
+  <div class="grid-table-row" style="position: relative; right: 20px; background-color: #ec407a;">
+    <div class="grid-table-cell"  style="background-color: #ec407a;" data-title="Sportstype"><img src="../../../media/sports-categories-files/bball.png" style="border-radius: 50%;"/> &nbsp; Sagene Basketball Park (Arkitekt Rivertz Plass)</div>
+    <div class="grid-table-cell" style="background-color: #ec407a;" data-title="Loc"><img src="../../../media/sports-categories-files/locationicon.png" width="17px" height="22px" style="border-radius: 50%;"/>&nbsp Arkitekt Rivertz Plass, Sagene, Oslo</div>
+    <div class="grid-table-cell" style="background-color: #ec407a;" data-title="Time"><img src="../../../media/sports-categories-files/timeicon.png" width="20px" height="20px" style="border-radius: 50%;"/>16:00 - 22:00</div>
+  </div>
+  </a>
+  <a class="btn block" style="text-decoration: none; text-transform: capitalize; font-weight: bolder; font-size: 24px; color: white;">
+  <div class="grid-table-row" style="background-color: #00bcd4;">
+    <div class="grid-table-cell" style="background-color: #00bcd4;" data-title="Sportstype"><img src="../../../media/sports-categories-files/bball.png" style="border-radius: 50%;"/>&nbsp; Torshovparken Basketball Court (Lilleborg banen)</div>
+    <div class="grid-table-cell" style="background-color: #00bcd4;" data-title="Loc"><img src="../../../media/sports-categories-files/locationicon.png" width="17px" height="22px" style="border-radius: 50%;"/>&nbsp Torshovparken, Torshov, Oslo</div>
+    <div class="grid-table-cell" style="background-color: #00bcd4;" data-title="Time"><img src="../../../media/sports-categories-files/timeicon.png" width="20px" height="20px" style="border-radius: 50%;"/>16:00 - 22:00</div>
+  </div>
+</a>
+
+</div>
+</div>
+
+
+
+	</div>
+
+	</div>
+
+
+
+		<br />
+	<br />
+<br />
+	<br />
+       <br />
+	<br />
+       <br />
+	<br />
+	 <div class="app-card"  id="locationsmapmobile" style="width: 810px; position: relative; top: 20px; left: 20px;">
+       <span>
+	  <img src="../../../media/main-template-files/locationicon.png" width="45px" height="60px" style="border-radius: 50%;"/>
+       &nbsp;  &nbsp; Ball Parks Locations - Map of All Oslo Outdoor Basketball Courts - City sports meeting places -  Google Maps (Oslo, Norge)
+       </span>
+
+<div id="#locationsmap"></div>
+	<div class="app-card__subtext">
+	<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1sBDWjnbtIjP5qSWE1zVxSZuxDz4&ehbc=2E312F" width="750" height="560"></iframe>
+	</div>
+
+   </div>
+  </div>
+          </div>
+ </div>
+ <div class="overlay-app"></div>
+</div>
+
+</div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<style>
+
+
+
+
+.btn {
+    padding: 1em 2.1em 1.1em;
+    border-radius: 3px;
+    margin: 8px 8px 8px 8px;
+    color: white;
+
+    display: inline-block;
+    background-color:#3f51b5;
+
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+
+    font-weight: normal;
+    font-size: 16px;
+
+
+    text-decoration: none;
+    -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+
+}
+.btn:hover, .btn:focus {
+    opacity: 1;
+	color: white;
+}
+.btn:active {
+    -webkit-transform: scale(0.80);
+    -moz-transform: scale(0.80);
+    -ms-transform: scale(0.80);
+    -o-transform: scale(0.80);
+    transform: scale(0.80);
+}
+.btn.block {
+    display: block !important;
+
+}
+.btn.circular {
+  border-radius: 50em !important;
+}
+
+
+
+</style>
+
+<style>
+
+.overlay {
+  background: url(../../../media/sports-categories-files/sportscategoriesheaderimage4.jpg) no-repeat top /contain;
+  positoion: relative;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 950px;
+height: 450px;
+
+}
+
+.user-details {
+  background: rgba(0, 0, 0, 0.20);
+width: 300px;
+    font-family: Calibri, serif;
+
+position: relative;
+bottom: 360px;
+}
+
+.user-details h4 {
+font-size: 30px;
+}
+
+.overlay:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(71, 32, 84, 0.3);
+  max-height: 250px;
+}
+
+.muck-up > .top {
+  position: relative;
+  min-height: 295px;
+  padding: 10px;
+  color: #fff;
+}
+
+.top .nav span {
+
+  display: block;
+}
+
+.nav p {
+  margin-top: 2px;
+  display: inline-block;
+  float: left;
+  vertical-align: bottom;
+}
+
+
+</style>
+
+
+
+
+
+
+<style>
+
+  * {
+  box-sizing: border-box;
+}
+#menu
+{
+  background-color: #ffffff79;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+ul.navbar-nav {
+  float:right;
+  text-align:center;
+}
+ul.navbar-nav li
+{
+  padding: 0 10px;
+}
+@media only screen and (max-width:767px)
+{ ul.navbar-nav { float:none; } }
+.container-fluid {
+  padding: 0 1em;
+}
+.navbar-nav li a
+{
+  color:black!important;
+  font-size:1.2em;
+  font-family: Century gothic,sans-serif;
+  font-weight:600;
+  transition: 0.4s ease;
+}
+.navbar-nav li a:hover
+{
+  color:#fff!important;
+  background-color:black!important;
+}
+.navbar-brand {
+  padding:10px 15px!important;
+}
+a.navbar-brand .fa-globe
+{
+  font-size: 30px;
+  color: black;
+  transition:0.5s ease;
+}
+a.navbar-brand .fa-globe:hover
+{
+  color: #3935e6;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: black!important;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #fff!important;
+}
+
+.container {
+  margin: 0 auto;
+
+   background: rgba(0, 0, 0, 0.21);
+   height: 120%;
+   width: 100%;
+}
+.splash {
+  background:url("../../../media/about-page-files/Aboutpagebackground1.jpg") no-repeat fixed center bottom;
+	background-size: cover;
+	color: #fff;
+}
+
+.splash .container {
+  padding-top: 15vh; /* No JS fallback*/
+  padding-bottom: 10vh; /* No JS fallback*/
+}
+
+.profile-image {
+  border-radius: 50%;
+  display: block;
+  max-height:250px;
+  max-width: 250px;
+  margin: 0 auto 1em;
+  width: 100%;
+  opacity: 0.85;
+}
+
+.splash h1 {
+  font-size: 40px;
+  margin-bottom: .15em;
+  text-align: center;
+}
+
+.splash .lead, .splash .continue {
+  display: inline-block;
+  text-align: center;
+}
+h1.intro-text
+{
+  margin:0;
+  color:#fff;
+}
+.splash .lead {
+  font-size: 30px;
+  margin-bottom: 1em;
+  font-family: Rockwell;
+}
+.navbar-inverse
+{
+  border:none!important;
+}
+@keyframes blink
+  {
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+  }
+        @-webkit-keyframes blink
+        {
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink
+        {
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-ms-keyframes blink
+        {
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes blink
+        {
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+/* code for animated blinking cursor */
+#typed-cursor
+{
+      opacity: 1;
+      font-size: 40px;
+      color: #fff;
+
+      -webkit-animation: blink 1s infinite;
+      -moz-animation: blink 1s infinite;
+      -ms-animation: blink 1s infinite;
+      -o-animation: blink 1s infinite;
+      animation: blink 1s infinite;
+}
+
+.splash .continue {
+  font-size: 3em;
+  display:block;
+}
+
+.splash .continue a {
+  border: 2px solid #fff;
+  border-radius: 100%;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  width: 40px;
+  height:40px;
+  font-size:30px;
+}
+.splash .continue a:hover {
+  background-color: rgba(255, 255, 255, .25);
+}
+
+  section h2 {
+    margin: 0;
+    font-size: 3em;
+
+}
+section.success {
+    color: #fff;
+
+  padding: 2%;
+  height: 1000px;
+   overflow: hidden;
+    filter: brightness(1.24);
+}
+
+
+
+
+#about {
+
+
+}
+
+.success video {
+  width: 95%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+  filter: saturate(1.6);
+  transform: scale(0.75);
+}
+
+
+
+.overlay-videodiv:focus
+{
+outline:none;
+
+}
+
+section.success a
+{
+  color:black;
+  transition: 0.4s ease;
+}
+section.success a:hover {
+    outline: 0;
+    color: #fff;
+  border: 2px solid #fff;
+}
+.contact-button
+{
+  padding-bottom:2%;
+}
+hr.star-light,hr.star-portfolio {
+    margin: 25px auto 30px;
+    padding: 0;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 3px;
+    text-align: center;
+}
+
+hr.star-light:after,hr.star-portfolio:after {
+    content: "\f005";
+    display: inline-block;
+    position: relative;
+    top: -.8em;
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 2em;
+}
+
+hr.star-light {
+    border-color: #fff;
+}
+hr.star-portfolio {
+    border-color: black;
+}
+hr.star-portfolio:after {
+    color: black;
+    background-color: #eee;
+}
+hr.star-light:after {
+    color: #fff;
+    background-color: rgb(13, 79, 136);
+}
+.content-text {
+font-size: 31px;
+font-family: Open Sans;
+	background: rgba(0, 0, 0, 0.4);
+position: relative;
+	top: 10px;
+	left: 30px;
+height: 650px;
+width: 1180px;
+
+}
+
+/* PORTFOLIO */
+.portfolio-card{
+    box-shadow: 0px 2px 5px #888888;
+    background: #eee;
+    border-radius: 4px;
+
+
+}
+
+.portfolio-card:hover{
+	box-shadow: 0px 10px 10px #888888;
+  cursor: pointer
+}
+
+.portfolio-container-holder{
+	background: #eee;
+	padding-bottom: 20px;
+}
+
+
+.portfolio-card-holder{
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+.portfolio-img{
+	width: 100%;
+	border-radius: 4px 4px 0 0;
+}
+
+.portfolio-img-desc{
+	position: relative;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: #fff;
+	color: #000;
+	text-align: center;
+	padding: 5px;
+}
+
+/* Contact */
+.contact-me-container{
+	padding:3%;
+background: rgb(13, 79, 136);
+}
+.fa-user,.fa-at,.fa-phone
+{
+  color:black;
+}
+.submit-button{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+/* ========================
+Footer
+======================== */
+
+footer {
+  background-color: #2C3E50;
+  color:  #fff;
+  font-size: 1.5em;
+  text-align: center;
+  padding:3%;
+  position: relative;
+  bottom: 80px;
+  height: 310px;
+}
+a.tel,a.tel:hover
+{
+  text-decoration:none;
+  color:#fff;
+}
+a.social-button {
+	background: #fff;
+	font-size: 20px;
+	border-radius: 50%;
+	margin: 5px;
+}
+.address-container{
+	display: inline-block;
+	margin: 0 auto;
+}
+a.link-facebook,a.link-twitter,a.link-codepen,a.link-linkedin,a.link-instagram
+{
+  transition:0.4s ease;
+}
+a.link-twitter
+{
+  color:#1DA1F2;
+}
+a.link-facebook
+{
+ color: #3b5998;
+}
+a.link-linkedin
+{
+  color:#007bb6;
+}
+a.link-instagram
+{
+  color:#e95950;
+}
+a.link-facebook:hover{
+	background-color: #3b5998;
+	color: #fff;
+}
+
+a.link-twitter:hover{
+	background-color: #1DA1F2;
+	color: #fff;
+}
+
+a.link-codepen:hover{
+	background-color: black;
+	color: #fff;
+}
+
+a.link-linkedin:hover{
+	background-color: #007bb6;
+	color: #fff;
+}
+a.link-instagram:hover{
+	background-color: #e95950;
+	color: #fff;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: transparent!important;
+}
+.fa-heart {
+  color:#f32323;
+}
+h4.author
+{
+  letter-spacing:4px;
+}
+hr.footer-hr
+{
+  width:150px;
+}
+hr.copyright
+{
+  opacity:0.4;
+}
+
+  </style>
+
+
+
+  <style>
+
+
+@font-face {
+  font-family: 'zocial';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.eot');
+  src: url('https://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.eot?#iefix') format('eot'), url('https://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.woff') format('woff'), url('https://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.ttf') format('truetype'), url('https://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.svg#zocialregular') format('svg');
+}
+
+.zocial-facebook:before {
+  content: "f ";
+  font-size: 34px;
+  position: relative;
+  left: 2px;
+  bottom: 16px;
+  background: rgba(0, 0, 0, 0.15);
+
+
+}
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+  font-syle: normal;
+}
+.author-green {
+  border: 1px solid #25a25a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  background: #2bc06a;
+  justify-content: space-around;
+   width: 1100px;
+}
+.author-green .info {
+  text-align: center;
+  align-items: center;
+  float: left;
+  color: #fff;
+  padding-top: 20px;
+  flex: 1 100%;
+}
+@media all and (min-width: 600px) {
+  .author-green .info {
+    flex: 1;
+  }
+}
+.author-green .info .name {
+  font-weight: 300;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-top: -5px;
+}
+.author-green .info .social {
+  margin-top: -23px;
+}
+.author-green .info .social a {
+  text-decoration: none;
+  color: #40d47e;
+  padding: 5px;
+}
+.author-green .info .social a:hover {
+  color: #7ee2a8;
+}
+.author-green .info img {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+}
+.author-green .about {
+  float: right;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #2ecc71;
+  flex: 1 100%;
+  position: relative;
+
+}
+@media all and (min-width: 600px) {
+  .author-green .about {
+    flex: 2;
+  }
+}
+.author-green .about .bio {
+  padding: 10px;
+  width: 700px;
+  font-size: 26px;
+   background: rgba(0, 0, 0, 0.25);
+}
+.author-green ::-moz-selection {
+  background-color: #54d98c;
+  color: #fff;
+}
+.author-green ::selection {
+  background-color: #54d98c;
+  color: #fff;
+}
+.author-turquoise {
+  border: 1px solid #148f77;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  background: #18af91;
+  justify-content: space-around;
+   width: 1100px;
+}
+.author-turquoise .info {
+  text-align: center;
+  align-items: center;
+  float: left;
+  color: #fff;
+  padding-top: 20px;
+  flex: 1 100%;
+}
+@media all and (min-width: 600px) {
+  .author-turquoise .info {
+    flex: 1;
+  }
+}
+.author-turquoise .info .name {
+  font-weight: 300;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-top: -5px;
+}
+.author-turquoise .info .social {
+  margin-top: -23px;
+}
+.author-turquoise .info .social a {
+  text-decoration: none;
+  color: #1dd2af;
+  padding: 5px;
+}
+.author-turquoise .info .social a:hover {
+  color: #55e7ca;
+}
+.author-turquoise .info img {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+}
+.author-turquoise .about {
+  float: right;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #1abc9c;
+  flex: 1 100%;
+}
+@media all and (min-width: 600px) {
+  .author-turquoise .about {
+    flex: 2;
+  }
+}
+.author-turquoise .about .bio {
+  padding: 10px;
+  width: 700px;
+   font-size: 26px;
+    background: rgba(0, 0, 0, 0.25);
+}
+.author-turquoise ::-moz-selection {
+  background-color: #28e1bd;
+  color: #fff;
+}
+.author-turquoise ::selection {
+  background-color: #28e1bd;
+  color: #fff;
+}
+.author-purple {
+  border: 1px solid #804399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  background: #954eb1;
+  justify-content: space-around;
+   width: 1100px;
+}
+.author-purple .info {
+  text-align: center;
+  align-items: center;
+  float: left;
+  color: #fff;
+  padding-top: 20px;
+  flex: 1 100%;
+}
+@media all and (min-width: 600px) {
+  .author-purple .info {
+    flex: 1;
+  }
+}
+.author-purple .info .name {
+  font-weight: 300;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-top: -5px;
+}
+.author-purple .info .social {
+  margin-top: -23px;
+}
+.author-purple .info .social a {
+  text-decoration: none;
+  color: #a66bbe;
+  padding: 5px;
+}
+.author-purple .info .social a:hover {
+  color: #c6a0d5;
+}
+.author-purple .info img {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+}
+.author-purple .about {
+  float: right;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #9b59b6;
+  flex: 1 100%;
+}
+@media all and (min-width: 600px) {
+  .author-purple .about {
+    flex: 2;
+  }
+}
+.author-purple .about .bio {
+  padding: 10px;
+    width: 700px;
+	 font-size: 26px;
+	  background: rgba(0, 0, 0, 0.25);
+}
+.author-purple ::-moz-selection {
+  background-color: #b07cc6;
+  color: #fff;
+}
+.author-purple ::selection {
+  background-color: #b07cc6;
+  color: #fff;
+}
+.author-red {
+  border: 1px solid #d62c1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  background: #e53f2e;
+  justify-content: space-around;
+  width: 1100px;
+}
+.author-red .info {
+  text-align: center;
+  align-items: center;
+  float: left;
+  color: #fff;
+  padding-top: 20px;
+  flex: 1 100%;
+}
+@media all and (min-width: 600px) {
+  .author-red .info {
+    flex: 1;
+  }
+}
+.author-red .info .name {
+  font-weight: 300;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-top: -5px;
+}
+.author-red .info .social {
+  margin-top: -23px;
+}
+.author-red .info .social a {
+  text-decoration: none;
+  color: #ea6153;
+  padding: 5px;
+}
+.author-red .info .social a:hover {
+  color: #f29f97;
+}
+.author-red .info img {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+}
+.author-red .about {
+  float: right;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #e74c3c;
+  flex: 1 100%;
+}
+@media all and (min-width: 600px) {
+  .author-red .about {
+    flex: 2;
+  }
+}
+.author-red .about .bio {
+  padding: 10px;
+    width: 700px;
+	 font-size: 26px;
+	  background: rgba(0, 0, 0, 0.25);
+}
+.author-red ::-moz-selection {
+  background-color: #ed7669;
+  color: #fff;
+}
+.author-red ::selection {
+  background-color: #ed7669;
+  color: #fff;
+}
+
+
+  .overlay-backgroundcolor {
+
+
+
+
+ position:relative;
+ bottom: 40px;
+
+  transform: scale(1);
+   filter: saturate(1);
+
+}
+ .overlay-backgroundshadow video {
+ width: 100%;
+height: 1400px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+  filter: saturate(1.6);
+  transform: scale(1);
+   filter: brightness(1.1);
+
+  }
+
+  overlay-backgroundshadow {
+ background-size: 100% 100%;
+	 position:relative;
+  }
+
+  .backgroundvideo video {
+
+    width: 100%;
+  height: 1000px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+  filter: saturate(2);
+    filter: brightness(1.1);
+	left: 100px;
+
+
+  }
+
+
+  .maincontent1 {
+   transform: scale(1);
+  width: 1200px;
+  height: auto;
+  position: relative;
+  left: 20px;
+  }
+
+  </style>
+
+
+
+
+<div class="aboutpage" style="position: relative; bottom: 2560px; right: 50px;">
+  <div class="maincontent1" style="transform: scale(0.86);">
+<div class="container-fluid splash" id="splash">
+  <div class="container">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/71/9e/59/719e59481d2be40a77ab6c3386fc0a45--photoshop-illustrator-illustrator-tutorials.jpg" alt="" class="profile-image">
+    <h1>About</h1>
+    <h1 class="intro-text"><span class="lead" id="typed">Background of App</span></h1>
+    <span class="continue"><a href="#about"><i class="fa fa-angle-down"></i></a></span>
+  </div>
+</div>
+        <!-- About Section -->
+
+
+
+	<section class="success" id="about">
+
+
+
+        <div class="container1">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2></h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+
+                </div>
+
+                </div>
+            </div>
+
+    </section>
+
+	</div>
+<!-- Portfolio -->
+
+
+ <div class="overlay-backgroundshadow" >
+
+  <div class="overlay-backgroundcolor">
+
+
+  <br />
+
+  <div class="author-green">
+  <div class="info">
+    <img src="../../../media/about-page-files/basketball6.jpg" class="profile" />
+    <h2 class="name" style="font-family: Calibri; ">Read more app features</h2>
+
+  </div>
+
+  <div class="about">
+<p class="bio">&#127936; This is a simple app and a small tool developed to plan and organize basketball trips to the city courts (in Oslo, Norway). A feature is to give sport athletes, players and friend groups insight into who's coming to play ball and when on wich days. This is a tool that can be used to view wich users (who) want to come to the park and plan to take a trip to a selected court on a chosen day that fits your schedule. How many people have reported to come and play on the given day? Users can get updates on the current number of players who plan to play a given day. <br />
+         </p>
+  </div>
+</div>
+
+<div class="author-turquoise">
+  <div class="info">
+    <img src="../../../media/about-page-files/basketball5.jpg" class="profile" />
+    <h2 class="name"></h2>
+    <div class="social">
+
+    </div>
+  </div>
+  <div class="about">
+<p class="bio">Background is to show how many athletes who will join the Sport park and different selections of ball courts in the city of Oslo, in Norway. Attending players will include an overview of wich people (users) who have reported arrival in advance, with just one button click! This simple feature works like an open invitation app. </p>
+  </div>
+</div>
+
+<div class="author-purple">
+  <div class="info">
+    <img src="../../../media/about-page-files/basketball8.jpg" class="profile" />
+    <h2 class="name"></h2>
+  </div>
+  <div class="about">
+<p class="bio"> It is also possible to cancel your attendance on a trip at any time, so anyone can see your presence updated.  	<br /> 	<br />If a meeting day is not found in feeds list, just create one! A requirement is to add a new day when you plan to come, so more players can join a trip.</p>
+  </div>
+</div>
+
+<div class="author-red" style="position:relative; left: 70px;">
+  <div class="info">
+    <img src="../../../media/about-page-files/basketball2.jpg" class="profile" />
+    <h2 class="name"></h2>
+  </div>
+  <div class="about">
+<p class="bio"> The aim group of the small webapp is intended for groups of basket players, athletes and friend groups who want to meet for playing, for summer pickup basketball or just to train. Our target group is focused on sport milieu and training environments. 	&#127936;   &#9977;&#65039;&#8205;&#9794;&#65039;  &#9977;&#65039;&#8205;&#9792;&#65039;
+ <br />
+Find our Social Media Facebook Page:
+
+ </p>
+
+  <div class="social">
+      <a href="https://www.facebook.com/groups/norwegianstreetbasketballsocietystreetballoslo" target="_blank" class="zocial-facebook"></a>
+
+    </div>
+
+ </div>
+</div>
+
+  </div>
+
+  </div>
+
+            </div>
+
+<!-- Footer -->
+	<footer class="footerclass" style="position: relative; bottom:2600px; height: 400px; width: 900px; right: 50px;">
+		<div class="container footer-container" style="position: relative; bottom: 4px;">
+			<div class="row footer-row">
+				<div class="col-xs-12 col-sm-6 col-md-6 text-center">
+			<h4 class="text-center">Find us here</h4>
+				 	<address>
+					 	<strong><i class="fa fa-location-arrow"></i>    Oslo, Norway</strong><br>
+					</address>
+				</div>
+
+				<div class="col-xs-12 col-md-6 col-sm-6 social-section">
+					<div class="text-center">
+						<h4 class="text-center">We are active on social media & can found us on Facebook</h4>
+				<div class="text-center social-buttons">
+						<a href="https://www.facebook.com/groups/norwegianstreetbasketballsocietystreetballoslo" class="btn btn-default btn-lg social-button link-facebook"><i class="fa fa-facebook"> <img src="../../../media/main-template-files/websitefacebookicon.png" width="54px" height="58px" style="border-radius: 50%;"/></i>
+						</a>
+
+
+					</div><hr class="footer-hr">
+            <h4 class="author">Made with <i class="fa fa-heart"></i> by <strong>Alex </strong></h4>
+					</div>
+				</div>
+			</div><hr class="copyright"> <br />
+      <h4 style="position: relative; bottom: 30px;"><i class="fa fa-copyright"></i> COPYRIGHTS ALL RIGHTS RESERVED</h4>
+		</div>
+	</footer>
+
+	</div>
+
+</div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  </body>
+
+<!-- partial -->
+  <script type="application/javascript">
+  $( window ).resize( function() {
+  centerSplash();
+});
+
+!function($){
+
+    "use strict";
+
+    var Typed = function(el, options){
+
+        // chosen element to manipulate text
+        this.el = $(el);
+        // options
+        this.options = $.extend({}, $.fn.typed.defaults, options);
+
+        // text content of element
+        this.text = this.el.text();
+
+        // typing speed
+        this.typeSpeed = this.options.typeSpeed;
+
+        // amount of time to wait before backspacing
+        this.backDelay = this.options.backDelay;
+
+        // input strings of text
+        this.strings = this.options.strings;
+
+        // character number position of current string
+        this.strPos = 0;
+
+        // current array position
+        this.arrayPos = 0;
+
+        // current string based on current values[] array position
+        this.string = this.strings[this.arrayPos];
+
+        // number to stop backspacing on.
+        // default 0, can change depending on how many chars
+        // you want to remove at the time
+        this.stopNum = 0;
+
+        // Looping logic
+        this.loop = this.options.loop;
+        this.loopCount = this.options.loopCount;
+        this.curLoop = 1;
+        if (this.loop === false){
+            // number in which to stop going through array
+            // set to strings[] array (length - 1) to stop deleting after last string is typed
+            this.stopArray = this.strings.length-1;
+        }
+        else{
+            this.stopArray = this.strings.length;
+        }
+
+        // All systems go!
+        this.init();
+        this.build();
+    }
+
+        Typed.prototype =  {
+
+            constructor: Typed
+
+            , init: function(){
+                // begin the loop w/ first current string (global self.string)
+                // current string will be passed as an argument each time after this
+                this.typewrite(this.string, this.strPos);
+            }
+
+            , build: function(){
+                this.el.after("<span id=\"typed-cursor\">|</span>");
+            }
+
+            // pass current string state to each function
+            , typewrite: function(curString, curStrPos){
+
+                // varying values for setTimeout during typing
+                // can't be global since number changes each time loop is executed
+                var humanize = Math.round(Math.random() * (100 - 30)) + this.typeSpeed;
+                var self = this;
+
+                // ------------- optional ------------- //
+                // backpaces a certain string faster
+                // ------------------------------------ //
+                // if (self.arrayPos == 1){
+                //  self.backDelay = 50;
+                // }
+                // else{ self.backDelay = 500; }
+
+                // containg entire typing function in a timeout
+                setTimeout(function() {
+
+                    // make sure array position is less than array length
+                    if (self.arrayPos < self.strings.length){
+
+                        // start typing each new char into existing string
+                        // curString is function arg
+                        self.el.text(self.text + curString.substr(0, curStrPos));
+
+                        // check if current character number is the string's length
+                        // and if the current array position is less than the stopping point
+                        // if so, backspace after backDelay setting
+                        if (curStrPos > curString.length && self.arrayPos < self.stopArray){
+                            clearTimeout(clear);
+                            var clear = setTimeout(function(){
+                                self.backspace(curString, curStrPos);
+                            }, self.backDelay);
+                        }
+
+                        // else, keep typing
+                        else{
+                            // add characters one by one
+                            curStrPos++;
+                            // loop the function
+                            self.typewrite(curString, curStrPos);
+                            // if the array position is at the stopping position
+                            // finish code, on to next task
+                            if (self.loop === false){
+                                if (self.arrayPos === self.stopArray && curStrPos === curString.length){
+                                    // animation that occurs on the last typed string
+                                    // fires callback function
+                                    var clear = self.options.callback();
+                                    clearTimeout(clear);
+                                }
+                            }
+                        }
+                    }
+                    // if the array position is greater than array length
+                    // and looping is active, reset array pos and start over.
+                    else if (self.loop === true && self.loopCount === false){
+                        self.arrayPos = 0;
+                        self.init();
+                    }
+                        else if(self.loopCount !== false && self.curLoop < self.loopCount){
+                            self.arrayPos = 0;
+                            self.curLoop = self.curLoop+1;
+                            self.init();
+                        }
+
+                // humanized value for typing
+                }, humanize);
+
+            }
+
+            , backspace: function(curString, curStrPos){
+
+                // varying values for setTimeout during typing
+                // can't be global since number changes each time loop is executed
+                var humanize = Math.round(Math.random() * (100 - 30)) + this.typeSpeed;
+                var self = this;
+
+                setTimeout(function() {
+
+                    // ----- this part is optional ----- //
+                    // check string array position
+                    // on the first string, only delete one word
+                    // the stopNum actually represents the amount of chars to
+                    // keep in the current string. In my case it's 14.
+                     if (self.arrayPos == 1, 2, 3, 4){
+                        self.stopNum = 0;
+                     }
+                    //every other time, delete the whole typed string
+                     //else{
+                        //self.stopNum = 0;
+                     //}
+
+                    // ----- continue important stuff ----- //
+                    // replace text with current text + typed characters
+                    self.el.text(self.text + curString.substr(0, curStrPos));
+
+                    // if the number (id of character in current string) is
+                    // less than the stop number, keep going
+                    if (curStrPos > self.stopNum){
+                        // subtract characters one by one
+                        curStrPos--;
+                        // loop the function
+                        self.backspace(curString, curStrPos);
+                    }
+                    // if the stop number has been reached, increase
+                    // array position to next string
+                    else if (curStrPos <= self.stopNum){
+                        clearTimeout(clear);
+                        var clear = self.arrayPos = self.arrayPos+1;
+                        // must pass new array position in this instance
+                        // instead of using global arrayPos
+                        self.typewrite(self.strings[self.arrayPos], curStrPos);
+                    }
+
+                // humanized value for typing
+                }, humanize);
+
+            }
+
+        }
+
+    $.fn.typed = function (option) {
+        return this.each(function () {
+          var $this = $(this)
+            , data = $this.data('typed')
+            , options = typeof option == 'object' && option
+          if (!data) $this.data('typed', (data = new Typed(this, options)))
+          if (typeof option == 'string') data[option]()
+        });
+    }
+
+    $.fn.typed.defaults = {
+        strings: ["Hello, hola, hi! ", "Welcome to App ", "Go on, scroll down", ":)"],
+        // typing and backspacing speed
+        typeSpeed: 50, // speed decreases as number increased
+        // time before backspacing
+        backDelay: 100,
+        // loop
+        loop: true,
+        // false = infinite
+        loopCount: false,
+        // ending callback function
+        callback: function(){ null }
+    }
+
+
+}(window.jQuery);
+
+
+$(function(){
+
+        $("#typed").typed({
+            strings: ["read more","intro", "purpose of application", "Idea behind app?"], //Strings to display when typing
+            typeSpeed: 40,
+            backDelay: 600,
+            loop: true,
+            // defaults to false for infinite loop
+            loopCount: false,
+            callback: function(){ foo(); }
+        });
+
+        function foo(){ console.log("Callback"); }
+
+    });
+  </script>
+
+
+
+
+
+
+
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="../../../media/about-page-files/script.js"></script>
+
+
+</html>
+
+
+
+
+{% endblock content %}
+
+
